@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../features/magazine/magazine_home.dart';
+import '../features/radarmusic/music_home.dart';
+import '../features/radartv/tv_home.dart';
+
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
 
@@ -10,12 +14,12 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _pages = <Widget>[
-    Center(child: Text('RADARTV Placeholder')),
-    Center(child: Text('Music Placeholder')),
-    Center(child: Text('Magazine Placeholder')),
-    Center(child: Text('RADARRoom Placeholder')),
-    Center(child: Text('Profile Placeholder')),
+  static final List<Widget> _pages = <Widget>[
+    const TvHome(),
+    const MusicHome(),
+    const MagazineHome(),
+    const Center(child: Text('RADARRoom Placeholder')),
+    const Center(child: Text('Profile Placeholder')),
   ];
 
   void _onItemTapped(int index) {
