@@ -1,0 +1,39 @@
+name: radarme
+description: RADARMe: The INDUSTRY Kit
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Firebase
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.17.9
+  cloud_firestore: ^4.15.9
+  firebase_storage: ^11.6.10
+
+  # HTTP
+  http: ^1.2.0
+
+  # RSS parsing
+  webfeed: ^0.7.0
+
+  # Audio playback
+  just_audio: ^0.9.36
+
+  # Video playback
+  video_player: ^2.8.2
+
+  # Text-to-speech
+  flutter_tts: ^3.8.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
