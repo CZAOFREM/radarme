@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../app.dart';
+import '../features/auth/login_screen.dart';
+import '../features/auth/register_screen.dart';
+import '../features/home/home_container.dart';
+import '../features/intro_video_screen.dart';
+import '../features/onboarding_flow.dart';
+
 // Placeholder pages
 class RADARTVPage extends StatelessWidget {
   const RADARTVPage({super.key});
@@ -57,6 +64,12 @@ class NotFoundPage extends StatelessWidget {
 
 class RouteManager {
   // Named routes
+  static const String intro = '/intro';
+  static const String onboarding = '/onboarding';
+  static const String login = '/login';
+  static const String register = '/register';
+  static const String home = '/home';
+  static const String shell = '/shell';
   static const String radartv = '/radartv';
   static const String music = '/music';
   static const String magazine = '/magazine';
@@ -66,6 +79,18 @@ class RouteManager {
   // Generate route with guards and fallback
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case intro:
+        return _guardedRoute(const IntroVideoScreen(), settings);
+      case onboarding:
+        return _guardedRoute(const OnboardingFlow(), settings);
+      case login:
+        return _guardedRoute(const LoginScreen(), settings);
+      case register:
+        return _guardedRoute(const RegisterScreen(), settings);
+      case home:
+        return _guardedRoute(const HomeContainer(), settings);
+      case shell:
+        return _guardedRoute(const AppScaffold(), settings);
       case radartv:
         return _guardedRoute(const RADARTVPage(), settings);
       case music:
